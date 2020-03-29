@@ -1,37 +1,32 @@
 ## spark安装
 
-You can use the [editor on GitHub](https://github.com/Xiezhibin/spark_installer_docker.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### 在本地机器上部署docker
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+安装docker，macOS支持用Homebrew来安装docker方式安装 [macOs上安装docker](https://www.runoob.com/docker/macos-docker-install.html) 安装过程可以参考上述博客;
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### git项目文件到本地机器
+git文件到本地，我们使用欧洲大数据平台的资源[https://github.com/big-data-europe/docker-spark](https://github.com/big-data-europe/docker-spark)。
 
 ```markdown
-Syntax highlighted code block
+- 打开终端，利用git命令下载文件到本机
+git clone https://github.com/big-data-europe/docker-spark.git
 
-# Header 1
-## Header 2
-### Header 3
+- 报错如下
+Cloning into 'docker-spark'...
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (31/31), done.
+error: RPC failed; curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 54
+fatal: the remote end hung up unexpectedly
+fatal: early EOF
+fatal: index-pack failed
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+- 修改大小限制
+git init
+git config http.postBuffer 524288000
+git clone https://github.com/big-data-europe/docker-spark.git
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Xiezhibin/spark_installer_docker.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
